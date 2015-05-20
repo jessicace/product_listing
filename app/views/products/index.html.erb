@@ -1,0 +1,24 @@
+<h2>Products</h2>
+<table>
+	<colgroup>
+		 <col class="name">
+		 <col class="price">
+		 <col class="information"> 
+	</colgroup>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Total Price</th>
+			<th>Information</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each do |product| %>
+			<tr>
+				<td><%= product.name %></td>
+				<td><%= number_to_currency(product.price + product.gst) %></td>
+				<td><%= link_to('More Information', product_path(product)) %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,18 @@
+<h2><%= @product.name %></h2>
+<nav>
+	<%= link_to('Index', products_path) %>
+</nav>
+<div>
+	<dl>
+	<dt>Name</dt>
+	<dd><%= @product.name %></dd>
+	<dt>Price</dt>
+	<dd>$<%= @product.price %></dd>
+	<dt>GST</dt>
+	<dd>$<%= @product.gst %></dd>
+	<dt>Total Price</dt>
+	<dd>$<%= @product.price + @product.gst %></dd>
+	<dt>Quantity</dt>
+	<dd><%= @product.quantity %></dd>
+	</dl>
+</div>

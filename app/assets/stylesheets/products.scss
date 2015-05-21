@@ -31,7 +31,7 @@ table {
     }
 }
 
-a {
+a.hover {
 	position: relative;
 	color: #fff;
 	text-decoration: none;
@@ -64,16 +64,18 @@ a {
 	}
 }
 
-dt, dd {
-    display: block;
-    float: left;
- 
-}
-dt {
-    clear: both;
-    font-weight: bold;
-    width: 10%;
-    &::after {
-	content: ":";
+figure {
+    display: inline-block;
+    &:hover img {
+	opacity: 1;
+	transition: opacity 0.5s;
+    }
+    img {
+	opacity: 0.5;
+    }
+    figcaption {
+	    text-align: center;
+	    text-transform: uppercase;
+	    letter-spacing: 2px;
     }
 }

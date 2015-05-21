@@ -1,18 +1,29 @@
 <h2><%= @product.name %></h2>
 <nav>
 	<%= link_to('Index', products_path) %>
+	<%= link_to('Edit', edit_product_path(@product)) %>
+	<%= link_to('Delete', product_path(@product), method: :delete, data: { confirm: "Are you sure? No backsies!" }) %>
 </nav>
-<div>
-	<dl>
-	<dt>Name</dt>
-	<dd><%= @product.name %></dd>
-	<dt>Price</dt>
-	<dd>$<%= @product.price %></dd>
-	<dt>GST</dt>
-	<dd>$<%= @product.gst %></dd>
-	<dt>Total Price</dt>
-	<dd>$<%= @product.price + @product.gst %></dd>
-	<dt>Quantity</dt>
-	<dd><%= @product.quantity %></dd>
-	</dl>
-</div>
+<%= image_tag(@product.image.url) if @product.image? %>
+<table>
+	<tr>
+		<th>Name</th>
+		<td><%= @product.name %></td>
+	</tr>
+	<tr>
+		<th>Price</th>
+		<td>$<%= @product.price %></td>
+	</tr>
+	<tr>
+		<th>GST</th>
+		<td>$<%= @product.gst %></td>
+	</tr>
+	<tr>
+		<th>Total Price</th>
+		<td>$<%= @product.price + @product.gst %></td>
+	</tr>
+	<tr>
+		<th>Quantity</th>
+		<td><%= @product.quantity %></td>
+	</tr>
+</table>

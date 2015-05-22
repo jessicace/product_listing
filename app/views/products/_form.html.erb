@@ -1,0 +1,33 @@
+<% if @product.errors.any? %>
+	<div id="error_explanation">
+		<ul>
+			<% @product.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<%= form_for @product do |form| %>	
+	<fieldset>
+		<legend>Product Details</legend>
+		<%= form.label :name %>
+		<%= form.text_field :name %><br/>
+		<%= form.label :description %>
+		<%= form.text_area :description %><br/>
+		<%= form.label :price %>
+		<%= form.text_field :price %><br/>
+		<%= form.label :gst %>
+		<%= form.text_field :gst %><br/>
+		<%= form.label :quantity %>
+		<%= form.text_field :quantity %><br/>
+		<%= form.label :image %>
+		<%= form.file_field :image %><br>
+		<%= form.label :remove_image %>
+		<%= form.check_box :remove_image %>
+	</fieldset>
+	<div class="buttons">
+		<%= form.submit %>
+		<%= link_to "Cancel", products_path, class: 'cancel', type: 'button' %>
+	</div>
+<% end %>

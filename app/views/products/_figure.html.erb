@@ -1,0 +1,8 @@
+<figure>
+	<%= link_to product_path(figure) do %>
+		<%= image_tag(figure.image.thumb.url)%>
+		<figcaption>
+			<%= figure.name %>
+		</figcaption>
+	<% end  %>
+</figure>

@@ -1,22 +1,4 @@
 <h2>Edit <%= @product.name %></h2>
-
-<%= form_for @product do |form| %>	
-	<fieldset>
-		<legend>Product Details</legend>
-		<%= form.label :name %>
-		<%= form.text_field :name %><br/>
-		<%= form.label :description %>
-		<%= form.text_area :description %><br/>
-		<%= form.label :price %>
-		<%= form.text_field :price %><br/>
-		<%= form.label :gst %>
-		<%= form.text_field :gst %><br/>
-		<%= form.label :quantity %>
-		<%= form.text_field :quantity %><br/>
-		<%= form.label :image %>
-		<%= form.file_field :image %>
-		<%= form.label :remove_image %>
-		<%= form.check_box :remove_image %>
-	</fieldset>
-	<%= form.submit %>
-<% end %>
+<div>
+	<%= render partial: 'form' %>
+</div>

@@ -22,12 +22,19 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params)
-    redirect_to product_path(@product), notice: 'Created new product.'
+    if @product.save
+      redirect_to product_path(@product), notice: 'Created new product.'
+    else
+      render :new, notice: 'Validation failed.'
+    end
   end
 
   def update
-    @product.update_attributes(product_params)
-    redirect_to product_path(@product), notice: 'Update product.'
+    if @product.update_attributes(product_params)
+      redirect_to product_path(@product), notice: 'Update product.'
+    else
+      render :edit, notice: 'Update failed.'
+    end
   end
 
   def destroy

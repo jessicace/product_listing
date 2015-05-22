@@ -1,37 +1,9 @@
 <h2>Products</h2>
-<%= link_to("New", new_product_path) %>
-<table>
-	<colgroup>
-		 <col class="name">
-		 <col class="price">
-		 <col class="information"> 
-	</colgroup>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Total Price</th>
-			<th>Information</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @products.each do |product| %>
-			<tr>
-				<td><%= product.name %></td>
-				<td><%= number_to_currency(product.price + product.gst) %></td>
-				<td><%= link_to('More Information', product_path(product), class: 'hover') %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
-
-<% @products.each do |product|  %>
-	<%= link_to product_path(product) do %>
-		<figure>
-			<%= image_tag(product.image.thumb.url)%>
-			<figcaption>
-				<%= product.name %>
-			</figcaption>
-		</figure>
-	<% end  %>
-<% end %>
-
+<nav>
+	<ul>
+		<li><%= link_to("Add New", new_product_path) %></li>
+	</ul>
+</nav>
+<div>
+	<%= render partial: 'figure', collection: @products %>
+</div>

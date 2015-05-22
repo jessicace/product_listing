@@ -2,80 +2,159 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h2 {
-    width: 60%;
+h1, h2 {
+		width: 80%;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+		margin: 20px auto;
 }
 
-table {
-    text-align: center;
-    table-layout: auto;
-    width: 60%;
-    border: 1px solid black;
-    border-collapse: collapse;
-    th, td {
-	padding: 0.5em;
-	line-height: 2;
-	border-bottom: 1px solid black;
-    }
-    .name {
-	min-width: 40%;
-    }
-    .price {
-	min-width: 20%;
-    }
-    .information {
-	min-width: 40%;
-    }
+hr {
+		border: none;
+		border-top: 1px solid black;
+		width: 60%;
+		margin-bottom: 20px;
 }
 
-a.hover {
-	position: relative;
-	color: #fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-weight: 400;
-	&:linked {
-	    color: black;
-	}
-	&:visited {
-	    color: black;
-	}
-	&:hover {
-
-	}
-	&:hover::after {
-	opacity: 1;
-	transform: translateY(0px);
-	}
-	&::after {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 4px;
-	background: rgba(0,0,0,0.1);
-	content: '';
-	opacity: 0;
-	transition: opacity 0.3s, transform 0.3s;
-	transform: translateY(5px);
-	}
+nav {
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+		margin-bottom: 20px;
 }
+
+nav ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		li {
+				font-size: 1.1em;
+				display: inline-block;
+				padding: 5px;
+				border-radius: 5px;
+		    text-transform: uppercase;
+				letter-spacing: 2px;
+				background-color: #E6E6E6;
+				transition: all 0.5s;
+		}
+		li:hover {
+				font-weight: 500;
+				padding: 10px;
+				background-color: white;
+				border: 2px solid #C2C2C2;
+		}
+}
+
+a {
+		color: black;
+		text-decoration: none;
+}
+
+		
 
 figure {
-    display: inline-block;
+		display: inline-block;
+						transition: all 0.5s;
     &:hover img {
-	opacity: 1;
-	transition: opacity 0.5s;
+				opacity: 1;
+				transition: opacity 0.5s;
     }
+		&:hover figcaption {
+				font-size: 1.1em;
+				font-weight: 600;
+				transition: font-size 0.1s;
+		}
+	
     img {
-	opacity: 0.5;
+				opacity: 0.5;
     }
     figcaption {
-	    text-align: center;
-	    text-transform: uppercase;
-	    letter-spacing: 2px;
+				text-align: center;
+				text-transform: uppercase;
+				letter-spacing: 2px;
     }
+}
+
+form {
+    width: 80%;
+    margin: 10px auto;
+}
+
+fieldset {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+legend {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+}
+
+label {
+    text-transform: capitalize;
+    display: inline-block;
+    min-width: 25%;
+    &::after {
+				content: ":"
+    }
+}
+
+input, textarea {
+		margin-top: 5px;
+    display: inline-block;
+    width: 25%;
+}
+
+.field_with_errors {
+		display: inline-block;
+		width: 25%;
+		input, textarea {
+				width: 100%;
+				border: 1px solid red;
+		}
+		& label {
+				font-weight: 800;
+		}
+}
+
+.buttons {
+		text-align: center;
+}
+
+input[type=submit], .cancel {
+		margin: 5px;
+		text-align: center;
+		display: inline-block;
+		color: black;
+		width: 150px;
+		text-decoration: none;
+		font-size: 1em;
+		border-radius: 5px;
+		background-color: #C2C2C2;
+		box-shadow: 0 3px #000;
+		border: none;
+		padding: 10px 5px;
+		text-transform: uppercase;
+		font-family: inherit;
+		cursor: pointer;
+}
+
+th {
+		width: 25%;
+		text-align: left;
+}
+
+.show {
+		text-align: center;
+		width: 80%;
+		margin: 0 auto;
+		img {
+				width: 300px;
+		}
+		table {
+				text-align: left;
+				margin: 0 auto;
+		}
 }
